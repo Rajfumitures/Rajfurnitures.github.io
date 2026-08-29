@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Furnitures - ऑनलाइन फर्नीचर स्टोर</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #232f3e;
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #febd69;
+        }
+
+        .search-bar {
+            display: flex;
+            width: 40%;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: #febd69;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        .cart-count {
+            background-color: #e77600;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-size: 12px;
+        }
+
+        /* Banner */
+        .hero-banner {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-banner h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* Products Grid */
+        .container {
+            padding: 40px 5%;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 2px solid #e77600;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            color: #B12704;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            padding: 10px;
+            background-color: #ffd814;
+            border: 1px solid #fcd200;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-add-cart:hover {
+            background-color: #f7ca00;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #131921;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Raj Furnitures</div>
+        <div class="search-bar">
+            <input type="text" placeholder="सोफा, बेड, टेबल खोजें...">
+            <button>खोजें</button>
+        </div>
+        <div class="nav-links">
+            <a href="#">लॉगिन</a>
+            <a href="#">ऑर्डर्स</a>
+            <a href="#">कार्ट <span class="cart-count" id="cart-count">0</span></a>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="hero-banner">
+        <h1>राज फर्नीचर्स में आपका स्वागत है</h1>
+        <p>अपने घर के लिए सबसे बेहतरीन और टिकाऊ फर्नीचर चुनें</p>
+    </div>
+
+    <!-- Products Section -->
+    <div class="container">
+        <h2 class="section-title">हमारे खास प्रोडक्ट्स</h2>
+        <div class="product-grid">
+
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80" alt="सोफा">
+                <div class="product-info">
+                    <div class="product-title">प्रीमियम 3-सीटर सोफा</div>
+                    <div class="product-price">₹24,999</div>
+                    <button class="btn-add-cart" onclick="addToCart()">कार्ट में जोड़ें</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&q=80" alt="बेड">
+                <div class="product-info">
+                    <div class="product-title">किंग साइज़ वुडन बेड</div>
+                    <div class="product-price">₹32,500</div>
+                    <button class="btn-add-cart" onclick="addToCart()">कार्ट में जोड़ें</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=500&q=80" alt="डायनिंग टेबल">
+                <div class="product-info">
+                    <div class="product-title">6-सीटर डायनिंग टेबल</div>
+                    <div class="product-price">₹18,999</div>
+                    <button class="btn-add-cart" onclick="addToCart()">कार्ट में जोड़ें</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=500&q=80" alt="कुर्सी">
+                <div class="product-info">
+                    <div class="product-title">मॉडर्न ऑफिस चेयर</div>
+                    <div class="product-price">₹5,499</div>
+                    <button class="btn-add-cart" onclick="addToCart()">कार्ट में जोड़ें</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Raj Furnitures. सर्वाधिकार सुरक्षित।</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let count = 0;
+        function addToCart() {
+            count++;
+            document.getElementById('cart-count').innerText = count;
+            alert('आइटम कार्ट में जोड़ दिया गया है!');
+        }
+    </script>
+
+</body>
+</html>
