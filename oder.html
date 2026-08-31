@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Order Form - Wooden Craft</title>
+    <style>
+        :root {
+            --primary-wood: #5C4033;
+            --secondary-wood: #8B5A2B;
+            --accent-color: #D2B48C;
+            --bg-color: #F9F6F0;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .order-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(92, 64, 51, 0.15);
+            border-top: 6px solid var(--secondary-wood);
+        }
+
+        h2 {
+            color: var(--primary-wood);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0d5c1;
+        }
+
+        .form-section h3 {
+            color: var(--secondary-wood);
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--primary-wood);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--accent-color);
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+            background-color: #fffaf0;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--secondary-wood);
+            box-shadow: 0 0 5px rgba(139, 90, 43, 0.3);
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .row .form-group {
+            flex: 1;
+        }
+
+        .summary-box {
+            background-color: #f4ebd0;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .summary-box p {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-submit {
+            background-color: var(--secondary-wood);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-wood);
+        }
+    </style>
+</head>
+<body>
+
+<div class="order-container">
+    <h2>🛋️ Furniture Order Form</h2>
+    
+    <form action="#" method="POST">
+        <!-- Product Details -->
+        <div class="form-section">
+            <h3>1. Product Selection</h3>
+            <div class="row">
+                <div class="form-group">
+                    <label for="product">Furniture Name:</label>
+                    <select id="product" name="product" required>
+                        <option value="">-- Select Furniture --</option>
+                        <option value="teak_sofa">Sheesham Wood 3-Seater Sofa Set - ₹35,000</option>
+                        <option value="queen_bed">King Size Storage Bed - ₹28,000</option>
+                        <option value="dining_table">6-Seater Dining Table - ₹42,000</option>
+                        <option value="study_table">Modern Study/Office Table - ₹12,000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="wood_type">Wood Type:</label>
+                    <select id="wood_type" name="wood_type">
+                        <option value="sheesham">Sheesham Wood</option>
+                        <option value="teak">Teak Wood</option>
+                        <option value="mango">Mango Wood</option>
+                        <option value="engineered">Engineered Wood</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="finish">Polish Finish:</label>
+                    <select id="finish" name="finish">
+                        <option value="walnut">Walnut Brown</option>
+                        <option value="honey">Honey Oak</option>
+                        <option value="teak_finish">Natural Teak</option>
+                        <option value="matt_black">Matt Black</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customer Details -->
+        <div class="form-section">
+            <h3>2. Shipping Details</h3>
+            <div class="row">
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Mobile Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Full Delivery Address:</label>
+                <textarea id="address" name="address" rows="3" placeholder="House no., street, landmark, city and pincode" required></textarea>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="pincode">Pincode:</label>
+                    <input type="text" id="pincode" name="pincode" placeholder="6-digit pincode" required>
+                </div>
+                <div class="form-group">
+                    <label for="assembly">Furniture Assembly:</label>
+                    <select id="assembly" name="assembly">
+                        <option value="free">Free Assembly by Company</option>
+                        <option value="self">Self Assembly</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment and Summary -->
+        <div class="form-section">
+            <h3>3. Payment Method</h3>
+            <div class="form-group">
+                <label for="payment">Choose Payment Method:</label>
+                <select id="payment" name="payment" required>
+                    <option value="cod">Cash on Delivery (COD - 10% Advance)</option>
+                    <option value="online">Online Payment (UPI / Credit Card / Net Banking)</option>
+                </select>
+            </div>
+
+            <div class="summary-box">
+                <p><span>Product Price:</span> <strong>₹35,000</strong></p>
+                <p><span>Delivery Charge:</span> <strong style="color: green;">Free</strong></p>
+                <p><span>Total Amount:</span> <strong style="font-size: 18px; color: var(--primary-wood);">₹35,000</strong></p>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Place Order</button>
+    </form>
+</div>
+
+</body>
+</html>
