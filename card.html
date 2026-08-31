@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Wooden Craft Furniture</title>
+    <style>
+        :root {
+            --primary-wood: #5C4033;
+            --secondary-wood: #8B5A2B;
+            --accent-color: #D2B48C;
+            --bg-color: #F9F6F0;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .cart-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(92, 64, 51, 0.15);
+            border-top: 6px solid var(--secondary-wood);
+        }
+
+        h2 {
+            color: var(--primary-wood);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .cart-table th, .cart-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0d5c1;
+        }
+
+        .cart-table th {
+            background-color: #fffaf0;
+            color: var(--primary-wood);
+        }
+
+        .item-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .item-info img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid var(--accent-color);
+        }
+
+        .qty-input {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            text-align: center;
+            background-color: #fffaf0;
+        }
+
+        .btn-remove {
+            background: none;
+            border: none;
+            color: #d9534f;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cart-summary {
+            background-color: #f4ebd0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .coupon-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .coupon-section input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            background-color: #fffaf0;
+        }
+
+        .btn-coupon {
+            background-color: var(--secondary-wood);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-coupon:hover {
+            background-color: var(--primary-wood);
+        }
+
+        .summary-details p {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-checkout {
+            display: block;
+            width: 100%;
+            background-color: var(--secondary-wood);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .btn-checkout:hover {
+            background-color: var(--primary-wood);
+        }
+    </style>
+</head>
+<body>
+
+<div class="cart-container">
+    <h2>🛒 Your Shopping Cart</h2>
+    
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Furniture Details</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="item-info">
+                        <div style="background:#e0d5c1; width:60px; height:60px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:24px;">🛋️</div>
+                        <div>
+                            <strong>Sheesham Wood 3-Seater Sofa Set</strong><br>
+                            <small style="color: #666;">Finish: Walnut Brown</small>
+                        </div>
+                    </div>
+                </td>
+                <td>₹35,000</td>
+                <td>
+                    <input type="number" class="qty-input" value="1" min="1" max="10">
+                </td>
+                <td>₹35,000</td>
+                <td><button class="btn-remove">✕</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="item-info">
+                        <div style="background:#e0d5c1; width:60px; height:60px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:24px;">🛏️</div>
+                        <div>
+                            <strong>King Size Storage Bed</strong><br>
+                            <small style="color: #666;">Finish: Honey Oak</small>
+                        </div>
+                    </div>
+                </td>
+                <td>₹28,000</td>
+                <td>
+                    <input type="number" class="qty-input" value="1" min="1" max="10">
+                </td>
+                <td>₹28,000</td>
+                <td><button class="btn-remove">✕</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="cart-summary">
+        <div class="coupon-section">
+            <input type="text" placeholder="Enter coupon code (e.g., WOOD10)">
+            <button class="btn-coupon">Apply</button>
+        </div>
+
+        <div class="summary-details">
+            <p><span>Subtotal:</span> <strong>₹63,000</strong></p>
+            <p><span>Coupon Discount:</span> <strong style="color: green;">- ₹0</strong></p>
+            <p><span>Delivery Charge:</span> <strong style="color: green;">Free</strong></p>
+            <hr style="border: 0; border-top: 1px solid #d2b48c;">
+            <p><span>Total Amount:</span> <strong style="font-size: 18px; color: var(--primary-wood);">₹63,000</strong></p>
+        </div>
+
+        <a href="order-page.html" class="btn-checkout">Proceed to Checkout</a>
+    </div>
+</div>
+
+</body>
+</html>
