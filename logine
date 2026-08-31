@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Furniture - 3D Furniture Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        /* Background Floating Furniture Elements (Movable/Floating) */
+        .bg-shape {
+            position: absolute;
+            opacity: 0.15;
+            pointer-events: none;
+            animation: floatShape 8s ease-in-out infinite alternate;
+        }
+
+        .shape1 { top: 10%; left: 10%; width: 100px; height: 100px; background: #fff; border-radius: 20px; animation-delay: 0s; }
+        .shape2 { bottom: 15%; right: 10%; width: 150px; height: 150px; background: #ff7e5f; border-radius: 50%; animation-delay: 2s; }
+        .shape3 { top: 20%; right: 15%; width: 80px; height: 80px; background: #feb47b; transform: rotate(45deg); animation-delay: 4s; }
+
+        @keyframes floatShape {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-30px) rotate(15deg); }
+        }
+
+        /* Main 3D Container */
+        .container {
+            position: relative;
+            width: 420px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease;
+        }
+
+        .login-header {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+            transform: translateZ(30px);
+        }
+
+        .login-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffdf9e;
+        }
+
+        .login-header p {
+            font-size: 14px;
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        /* Input Groups with Movable 3D Depth */
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+            transform: translateZ(20px);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 16px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .input-group input::placeholder {
+            color: #eee;
+        }
+
+        .input-group input:focus {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(255, 223, 158, 0.5);
+        }
+
+        /* Interactive 3D Button */
+        .btn-container {
+            transform: translateZ(40px);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #ffaf7b, #ff7e5f);
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(255, 126, 95, 0.4);
+            background: linear-gradient(135deg, #ffb888, #ff6a48);
+        }
+
+        .login-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Footer Links */
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 14px;
+            transform: translateZ(15px);
+        }
+
+        .footer-links a {
+            color: #ffdf9e;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Movable Decorative Shapes -->
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="bg-shape shape3"></div>
+
+    <!-- 3D Interactive Login Card -->
+    <div class="container" id="loginCard">
+        <div class="login-header">
+            <h1>Raj Furniture</h1>
+            <p>Login to your furniture store</p>
+        </div>
+        <form>
+            <div class="input-group">
+                <input type="email" placeholder="Registered email address" required>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Secure password" required>
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="login-btn">Login</button>
+            </div>
+            <div class="footer-links">
+                <a href="#">Forgot Password?</a>
+                <a href="#">Create New Account</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript for 3D Movable Tilt Effect based on Mouse Cursors
+        const card = document.getElementById('loginCard');
+
+        document.addEventListener('mousemove', (e) => {
+            let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Reset card position when mouse leaves window
+        document.addEventListener('mouseleave', () => {
+            card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+            card.style.transition = `transform 0.5s ease`;
+        });
+
+        document.addEventListener('mouseenter', () => {
+            card.style.transition = `none`;
+        });
+    </script>
+</body>
+</html>
