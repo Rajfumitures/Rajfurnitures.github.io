@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raj Furnitures - ऑनलाइन फर्नीचर स्टोर</title>
+    <title>Raj Furnitures - Online Furniture Store</title>
+<link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
     <style>
         * {
             margin: 0;
@@ -163,99 +165,213 @@
         }
 
         /* Footer */
-        footer {
-            background-color: #131921;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
+        <footer>
+            <p>&copy; 2026 Raj Furnitures. All rights reserved.</p>
+        </footer>
     </style>
 </head>
+
 <body>
 
     <!-- Header -->
     <header>
         <div class="logo">Raj Furnitures</div>
         <div class="search-bar">
-            <input type="text" placeholder="सोफा, बेड, टेबल खोजें...">
-            <button>खोजें</button>
+            <input type="text" placeholder="Search sofa, bed, table...">
+            <button>Search</button>
         </div>
         <div class="nav-links">
-            <a href="#">लॉगिन</a>
-            <a href="#">ऑर्डर्स</a>
-            <a href="#">कार्ट <span class="cart-count" id="cart-count">0</span></a>
+            <a href="login.html">Login</a>
+			<a href="oder.html">Ouder</a>
+            <a href="card.html">Add to cart<span class="cart-count" id="cart-count">0</span></a>
         </div>
     </header>
 
     <!-- Banner -->
     <div class="hero-banner">
-        <h1>राज फर्नीचर्स में आपका स्वागत है</h1>
-        <p>अपने घर के लिए सबसे बेहतरीन और टिकाऊ फर्नीचर चुनें</p>
+        <h1>Welcome to Raj Furnitures</h1>
+        <p>Choose the best and most durable furniture for your home</p>
     </div>
 
     <!-- Products Section -->
     <div class="container">
-        <h2 class="section-title">हमारे खास प्रोडक्ट्स</h2>
+        <h2 class="section-title">Our Featured Products</h2>
         <div class="product-grid">
 
             <!-- Product 1 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80" alt="सोफा">
+            <div class="product-card" onclick="window.location.href='oder.html'">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80" alt="Sofa">
                 <div class="product-info">
-                    <div class="product-title">प्रीमियम 3-सीटर सोफा</div>
+                    <div class="product-title">Premium 3-Seater Sofa</div>
                     <div class="product-price">₹24,999</div>
-                    <button class="btn-add-cart" onclick="addToCart()">कार्ट में जोड़ें</button>
+					<button class="btn-add-cart" onclick="window.location.href='card.html'">Add to cart</button><br><br>
+                    <button class="btn-add-cart" onclick="window.location.href='oder.html'"> Bay Now</button>														
                 </div>
             </div>
 
             <!-- Product 2 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&q=80" alt="बेड">
+            <div class="product-card" onclick="window.location.href='oder.html'">
+                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&q=80" alt="Bed">
                 <div class="product-info">
-                    <div class="product-title">किंग साइज़ वुडन बेड</div>
+                    <div class="product-title">King Size Wooden Bed</div>
                     <div class="product-price">₹32,500</div>
-                    <button class="btn-add-cart" onclick="addToCart()">कार्ट में जोड़ें</button>
+					<button class="btn-add-cart" onclick="window.location.href='card.html'">Add to cart</button><br><br>
+                    <button class="btn-add-cart" onclick="window.location.href='oder.html'"> Bay Now</button>
                 </div>
             </div>
 
             <!-- Product 3 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=500&q=80" alt="डायनिंग टेबल">
+            <div class="product-card"onclick="window.location.href='oder.html'">
+                <img src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=500&q=80" alt="Dining Table">
                 <div class="product-info">
-                    <div class="product-title">6-सीटर डायनिंग टेबल</div>
+                    <div class="product-title">6-Seater Dining Table</div>
                     <div class="product-price">₹18,999</div>
-                    <button class="btn-add-cart" onclick="addToCart()">कार्ट में जोड़ें</button>
+					<button class="btn-add-cart" onclick="window.location.href='card.html'">Add to cart</button><br><br>
+                    <button class="btn-add-cart" onclick="window.location.href='oder.html'"> Bay Now</button>
                 </div>
             </div>
 
             <!-- Product 4 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=500&q=80" alt="कुर्सी">
+            <div class="product-card" >
+                <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=500&q=80" alt="Chair">
                 <div class="product-info">
-                    <div class="product-title">मॉडर्न ऑफिस चेयर</div>
+                    <div class="product-title">Modern Office Chair</div>
                     <div class="product-price">₹5,499</div>
-                    <button class="btn-add-cart" onclick="addToCart()">कार्ट में जोड़ें</button>
+					<button class="btn-add-cart" onclick="window.location.href='card.html'">Add to cart</button><br><br>
+                    <button class="btn-add-cart" onclick="window.location.href='oder.html'"> Bay Now</button>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Raj Furnitures. सर्वाधिकार सुरक्षित।</p>
-    </footer>
 
-    <!-- JavaScript -->
-    <script>
-        let count = 0;
-        function addToCart() {
-            count++;
-            document.getElementById('cart-count').innerText = count;
-            alert('आइटम कार्ट में जोड़ दिया गया है!');
-        }
-    </script>
 
+
+
+
+
+
+
+
+<footer class="furniture-footer">
+  <div class="footer-container">
+    
+    <!-- Column 1: Brand & Founder Info -->
+    <div class="footer-col">
+      <h3 class="footer-logo">Raj Furniture</h3>
+      <p class="footer-desc">Crafting comfort and durability for your dream home with handcrafted wooden furniture.</p>
+      
+      <!-- Founder Details -->
+      <div class="founder-box">
+        <p class="founder-title">Founder & CEO</p>
+        <p class="founder-name">Raj Rajuram Jangid</p>
+      </div>
+
+      <!-- Logged-in User Info -->
+      <div class="user-footer-info">
+        <p>Logged in as: <span id="userName"></span></p>
+      </div>
+    </div>
+
+    <!-- Column 2: Furniture Categories -->
+    <div class="footer-col">
+      <h4 class="footer-heading">Collections</h4>
+      <ul class="footer-links">
+        <li>Living Room</li>
+        <li>Bedroom Sets</li>
+        <li>Dining Tables</li>
+        <li>Office Desks</li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Contact & Info -->
+    <div class="footer-col">
+      <h4 class="footer-heading">Contact Us</h4>
+      <p class="footer-info">Jaipur, Rajasthan</p>
+      <p class="footer-info">support@rajfurniture.com</p>
+      <p class="footer-info">+91 8890926152</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Raj Furniture. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .furniture-footer {
+    background-color: #221f1d;
+    color: #dcd7d0;
+    padding: 30px 20px 15px;
+    font-family: Arial, sans-serif;
+  }
+  .footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .footer-col {
+    flex: 1;
+    min-width: 220px;
+  }
+  .footer-logo {
+    font-size: 20px;
+    color: #d4a373;
+    margin-bottom: 8px;
+  }
+  .footer-desc, .footer-info, .footer-links li {
+    font-size: 13px;
+    color: #aba39b;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .founder-box {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #dcd7d0;
+  }
+  .founder-title {
+    font-size: 11px;
+    color: #8c847d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .founder-name {
+    font-weight: bold;
+    color: #d4a373;
+  }
+  .user-footer-info {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #d4a373;
+    font-weight: bold;
+  }
+  .footer-heading {
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-bottom {
+    max-width: 1000px;
+    margin: 25px auto 0;
+    padding-top: 12px;
+    border-top: 1px solid #383330;
+    text-align: center;
+    font-size: 12px;
+    color: #8c847d;
+  }
+</style>
+</style>
+</style>
 </body>
 </html>
